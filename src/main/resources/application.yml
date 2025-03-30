@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: next-level-app
+
+server:
+  servlet:
+    context-path: /opt/next-level-app
+  port: 8080
+
+logging:
+  level:
+    brave: DEBUG
+    root: INFO
+
+management:
+  endpoint:
+    web:
+      base-path: /actuator
+      exposure:
+        include: "*"
