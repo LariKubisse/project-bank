@@ -1,0 +1,274 @@
+{
+	"info": {
+		"_postman_id": "f215ddf5-8868-4b13-8e42-6859b8e88943",
+		"name": "next-level-app-collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31305792"
+	},
+	"item": [
+		{
+			"name": "# Reset state before starting tests",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": \"withdraw\",\r\n    \"origin\": \"200\",\r\n    \"amount\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/opt/next-level-app/event",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"opt",
+						"next-level-app",
+						"event"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get balance for non-existing account",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/opt/next-level-app/balance?account_id=1234",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"opt",
+						"next-level-app",
+						"balance"
+					],
+					"query": [
+						{
+							"key": "account_id",
+							"value": "1234"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create account with initial balance",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": \"deposit\",\r\n    \"destination\": \"100\",\r\n    \"amount\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/opt/next-level-app/event",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"opt",
+						"next-level-app",
+						"event"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deposit into existing account",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": \"deposit\",\r\n    \"destination\": \"300\",\r\n    \"amount\": 100\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/opt/next-level-app/event",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"opt",
+						"next-level-app",
+						"event"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get balance for existing account",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/opt/next-level-app/balance?account_id=100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"opt",
+						"next-level-app",
+						"balance"
+					],
+					"query": [
+						{
+							"key": "account_id",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Withdraw from non-existing account",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": \"deposit\",\r\n    \"destination\": \"100\",\r\n    \"amount\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/opt/next-level-app/event",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"opt",
+						"next-level-app",
+						"event"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Withdraw from existing account",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": \"deposit\",\r\n    \"destination\": \"100\",\r\n    \"amount\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/opt/next-level-app/event",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"opt",
+						"next-level-app",
+						"event"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transfer from existing account",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": \"withdraw\",\r\n    \"origin\": \"100\",\r\n    \"amount\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/opt/next-level-app/event",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"opt",
+						"next-level-app",
+						"event"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transfer from non-existing account",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": \"withdraw\",\r\n    \"origin\": \"100\",\r\n    \"amount\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/opt/next-level-app/event",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"opt",
+						"next-level-app",
+						"event"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
